@@ -116,11 +116,9 @@ $ docker load --input {filename}.tar
 > `COPY` 複製文件至container中 (若要直接使用volume來串資料則不需要這個)  
 > `RUN` build過程中需要執行的指令或安裝  
 > `CMD` Container 啟動後執行的指令  
-> :::info  
-> `CMD`不能空白或不打，否則 Container 一開起來就會馬上關閉  
-> `CMD ["tail", "-f", "/dev/null"]` 可以讓 Container 保持開起但不執行任何命令  
-> `CMD ["/usr/sbin/sshd", "-D"]` 啟動SSH服務 (也可以達到保持開起的效果)  
-> :::  
+> > `CMD`不能空白或不打，否則 Container 一開起來就會馬上關閉  
+> > `CMD ["tail", "-f", "/dev/null"]` 可以讓 Container 保持開起但不執行任何命令  
+> > `CMD ["/usr/sbin/sshd", "-D"]` 啟動SSH服務 (也可以達到保持開起的效果)  
 > `EXPOSE` 列出服務會用到哪些port，沒打其實也沒差(但有比較嚴謹)，重點在 `docker create/run` 時要 `-p` 這些port  
 > `ENV` 先定義好一些環境變數，例如 `ENV PATH=$PATH:/user_data/.local/bin`  
 > `ARG` 在 `build` 時，提供一個可以用 `--build-arg` 帶入的環境變數。  
