@@ -177,6 +177,7 @@ $ docker compose -f {filename}.yml -d --build
           - {target path or volume name}:{container path}
     ```
 
+---
 
 ## License
 
